@@ -20,6 +20,10 @@ This app displays data in a heatmap format using the Nivo library. The heatmap d
 3.  Use the filters to display data for specific genes or top-level phenotype terms.
 4.  Use the slider to adjust the percentage of genes displayed based on their  highest count  of phenotype associations.
 
+## Deployment 
+
+This app has been deployed to Netlify and can be accessed at: https://14richa-impc.netlify.app/#/admin/default.
+
 ## Technologies Used
 
 -   React:  [https://reactjs.org/](https://reactjs.org/)
