@@ -1,15 +1,8 @@
 // Chakra Imports
 import {
-	Avatar,
 	Button,
 	Flex,
 	Icon,
-	Image,
-	Link,
-	Menu,
-	MenuButton,
-	MenuItem,
-	MenuList,
 	Text,
 	useColorModeValue,
 	useColorMode
@@ -19,7 +12,6 @@ import { SidebarResponsive } from 'components/sidebar/Sidebar';
 import PropTypes from 'prop-types';
 import React from 'react';
 // Assets
-import { MdNotificationsNone, MdInfoOutline } from 'react-icons/md';
 import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { FaEthereum } from 'react-icons/fa';
 import routes from 'routes';

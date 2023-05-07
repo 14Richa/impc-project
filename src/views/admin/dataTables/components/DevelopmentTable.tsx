@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 // // Custom components
 import CustomCard from 'components/card/Card';
 import { ResponsiveHeatMap } from '@nivo/heatmap';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { HeatmapData } from 'data/analysis';
 
 interface HeatmapProps {

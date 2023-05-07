@@ -14,7 +14,7 @@ export default function UserReports() {
 		<Box pt={{ base: '80px', xl: '50px' }} mt='80px'>
 		<SimpleGrid columns={3} spacing={4}>
 				<div style={{ maxWidth: '800px', margin: '0 auto', marginTop: '60px', backgroundColor: 'transparent' }} >
-		 			<img src ={imageLeft} style={{ height: 400}}/>
+		 			<img src ={imageLeft}  alt = "image1" style={{ height: 400}}/>
 		 		</div>
 		  <Card maxWidth='800px' mx='auto' mt= '60px'>
 		    <Text color="000000" fontWeight='bold' fontSize='2xl' mt='10px' mb='4px' textAlign='center'>
@@ -31,12 +31,12 @@ export default function UserReports() {
 		    </Text>
 		  </Card>
 		  <div style={{ maxWidth: '800px', margin: '0 auto', marginTop: '60px', backgroundColor: 'transparent' }} >				
-				<img src = {imageRight} style={{ height: 400 }}/>
+				<img src = {imageRight} alt = "image2" style={{ height: 400 }}/>
 			</div>
 
 		</SimpleGrid>
 			<div style={{ maxWidth: '800px', margin: '0 auto', marginTop: '60px', backgroundColor: 'transparent' }} >
-				<img src = {imageBelow} style={{ height: 400 }} />
+				<img src = {imageBelow}  alt = "image3"style={{ height: 400 }} />
 			</div>
 		</Box>
 
