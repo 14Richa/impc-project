@@ -4,13 +4,17 @@
 import { Box, Text, SimpleGrid  } from '@chakra-ui/react';
 import Card from 'components/card/Card';
 
+const imageRight = require('../../../assets/embryo_image_3-removebg-preview.png');
+const imageLeft = require('../../../assets/embryo_image_1-removebg-preview.png');
+const imageBelow = require('../../../assets/embryo_image_2-removebg-preview.png')
+
 export default function UserReports() {
 	return (
 
 		<Box pt={{ base: '80px', xl: '50px' }} mt='80px'>
 		<SimpleGrid columns={3} spacing={4}>
 				<div style={{ maxWidth: '800px', margin: '0 auto', marginTop: '60px', backgroundColor: 'transparent' }} >
-		 			<img src = "https://o.remove.bg/downloads/ff054da4-d174-493d-ab0a-dd4cf3ec036a/embryo_image_1-removebg-preview.png" style={{ height: 400 }}/>
+		 			<img src ={imageLeft} style={{ height: 400}}/>
 		 		</div>
 		  <Card maxWidth='800px' mx='auto' mt= '60px'>
 		    <Text color="000000" fontWeight='bold' fontSize='2xl' mt='10px' mb='4px' textAlign='center'>
@@ -27,12 +31,12 @@ export default function UserReports() {
 		    </Text>
 		  </Card>
 		  <div style={{ maxWidth: '800px', margin: '0 auto', marginTop: '60px', backgroundColor: 'transparent' }} >				
-				<img src = "https://o.remove.bg/downloads/c88a12e7-75ae-4021-b306-f16e517baa7f/embryo_image_3-removebg-preview.png" style={{ height: 400 }}/>
+				<img src = {imageRight} style={{ height: 400 }}/>
 			</div>
 
 		</SimpleGrid>
 			<div style={{ maxWidth: '800px', margin: '0 auto', marginTop: '60px', backgroundColor: 'transparent' }} >
-				<img src = "https://o.remove.bg/downloads/9b28f583-9485-4afd-b2ee-f3045dfcdcd4/embryo_image_2-removebg-preview.png" style={{ height: 400 }} />
+				<img src = {imageBelow} style={{ height: 400 }} />
 			</div>
 		</Box>
 
