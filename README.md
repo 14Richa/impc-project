@@ -1,4 +1,4 @@
-# # Heatmap App
+## Heatmap App
 
 This app displays data in a heatmap format using the Nivo library. The heatmap displays genes on the Y axis and top-level phenotype terms on the X axis. The data can be filtered by a list of genes or top-level phenotype terms.
 
