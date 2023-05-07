@@ -1,19 +1,32 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import './assets/css/App.css';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import AdminLayout from './layouts/admin';
+import { ChakraProvider, extendTheme as chakraExtendTheme} from '@chakra-ui/react';
+import {
+	ThemeProvider as MaterialThemeProvider,
+	createTheme as muiCreateTheme,
+	THEME_ID,
+  } from '@mui/material/styles';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import theme from './theme/theme';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const materialTheme = muiCreateTheme();
+
+ReactDOM.render(
+	<ChakraProvider theme={theme} resetCSS>
+		<MaterialThemeProvider theme={{ [THEME_ID]: materialTheme }}>
+		<React.StrictMode>
+			<HashRouter>
+				<Switch>
+					<Route path={`/admin`} component={AdminLayout} />
+					<Redirect from='/' to='/admin' />
+				</Switch>
+			</HashRouter>
+		</React.StrictMode>
+		</MaterialThemeProvider>
+
+	</ChakraProvider>,
+	document.getElementById('root')
+);
