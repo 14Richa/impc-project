@@ -28,6 +28,8 @@ export default function Heatmap(props: HeatmapProps) {
    <CustomCard flexDirection='column' px='0px' overflowX={{ sm: 'scroll', lg: 'hidden' }}>
    <Box>
       <div>
+		<div style={{ marginLeft: '180px', marginBottom: '11px' }}> *The dataset has been preprocessed for optimized performance. 
+			Genes with phenotype_count less than 10 have been removed from the dataset for this heatmap.</div>
         <div style={heatmapStyle}>
             <ResponsiveHeatMap
             data={props.heatmapData}
