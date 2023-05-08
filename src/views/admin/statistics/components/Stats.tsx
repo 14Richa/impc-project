@@ -1,32 +1,37 @@
 // Chakra imports
 import {Text, Box } from '@chakra-ui/react';
 import { red } from '@mui/material/colors';
-import { ResponsiveBar } from '@nivo/bar';
+import { BarDatum, ResponsiveBar } from '@nivo/bar';
 import CustomCard from 'components/card/Card';
-import { generateBarChartData} from 'data/analysis';
-// Custom components
-const data = generateBarChartData();
 
-export default function Stats() {
-    // console.log(getBarChartPhenoTypeFreqCount())
+export interface StatsProps {
+    title: string;
+    data: BarDatum[];
+    text: string;
+    keys: string[];
+    indexBy: string;
+    legendBottom: string;
+    axisBottomRotation: number;
+    legendLeft: string;
+  }
+
+export default function Stats(props: StatsProps) {
+    const {title, data, text, keys, indexBy, legendBottom, axisBottomRotation, legendLeft} = props;
 	return (
         <div>
-            <Box display='flex' justifyContent='center' width='800px' height='500px' >
+            <Box display='flex' justifyContent='center' width='700px' height='500px' >
             <CustomCard flexDirection='column' px='4px' overflowX={{ sm: 'scroll', lg: 'hidden' }}>
 				<Text me='auto' color={red} fontSize='xl' fontWeight='700' lineHeight='100%'>
-					Phenotype Count Frequency
+					{title}
 				</Text>
                 <Text me='auto' color={red} fontSize='medium' lineHeight='100%'>
-                    The barchart below describes the distribution of phenotype_count in the dataset. 
-                    Greater than 90% of the genes have a phenotype count of 1 or 2.
-				</Text>
+				{text}
+                </Text>
                 <ResponsiveBar
                     data = {data}
-                    keys={[
-                        'count'
-                    ]}
-                    indexBy="freq"
-                    margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+                    keys={keys}
+                    indexBy={indexBy}
+                    margin={{ top: 50, right: 120, bottom: 100, left: 80 }}
                     padding={0.3}
                     valueScale={{ type: 'linear' }}
                     indexScale={{ type: 'band', round: true }}
@@ -36,8 +41,8 @@ export default function Stats() {
                     axisBottom={{
                         tickSize: 5,
                         tickPadding: 5,
-                        tickRotation: 0,
-                        legend: 'phenotype count',
+                        tickRotation: axisBottomRotation,
+                        legend: legendBottom,
                         legendPosition: 'middle',
                         legendOffset: 32
                     }}
@@ -45,7 +50,7 @@ export default function Stats() {
                         tickSize: 5,
                         tickPadding: 5,
                         tickRotation: 0,
-                        legend: 'frequency',
+                        legend: legendLeft,
                         legendPosition: 'middle',
                         legendOffset: -50
                     }}

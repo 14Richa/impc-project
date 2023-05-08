@@ -33,7 +33,7 @@ export interface BarChartDatum {
     "color": string;
 }
 
-export function generateBarChartData(): BarDatum[]{
+export function generatePhenotypeCountFreqChartData(): BarDatum[]{
     const data: PhenotypeData[] = jsonData;
     const frequency : { [count: number]: number } = {};
     for (let i = 0; i < data.length; i++) {
@@ -50,6 +50,29 @@ export function generateBarChartData(): BarDatum[]{
       res.push({
         freq: parseInt(num),
         count: frequency[num],
+      });
+    }
+    return res;
+};
+
+export function generatePhenotypeFreqChartData(): BarDatum[]{
+
+	const data: PhenotypeData[] = jsonData;
+    const frequency : { [phenotype: string]: number } = {};
+    for (let i = 0; i < data.length; i++) {
+		const phenotype = data[i].top_level_phenotype_term.top_level_mp_term_name
+    	if (frequency[phenotype]) {
+      		frequency[phenotype]++;
+    	} else {
+      		frequency[phenotype] = 1;
+    	}
+    }
+
+    const res: BarDatum[] = [];
+    for (const phenotype in frequency) {
+      res.push({
+        phenotype: phenotype,
+        count: frequency[phenotype],
       });
     }
     return res;
