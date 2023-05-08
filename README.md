@@ -30,3 +30,10 @@ This app has been deployed to Netlify and can be accessed at: https://14richa-im
 -   Material UI:  [https://material-ui.com/](https://material-ui.com/)
 -   Chakra UI:  [https://chakra-ui.com/](https://chakra-ui.com/)
 -   Nivo:  [https://nivo.rocks/](https://nivo.rocks/)
+
+## Conceptual and Technical Decisions
+
+For this project, I decided to use React and TypeScript to build the web application. React's component-based architecture and declarative programming model allowed me to create reusable UI components and manage the state of my application in an efficient and predictable way. TypeScript's static typing also helped me catch errors early in the development process and improve the overall reliability of my code.
+For styling, I chose to use Material UI and Chakra UI, two popular and well-documented UI component libraries for React. Both libraries allowed me to create a consistent and visually appealing UI for my application with minimal effort.
+Overall, these decisions allowed me to build a robust and user-friendly web application that can be easily maintained and extended over time.
+
