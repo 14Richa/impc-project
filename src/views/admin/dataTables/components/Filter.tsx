@@ -64,6 +64,7 @@ export default function Filter(props: FilterProps) {
             label="Select genes"
             InputLabelProps={{
               shrink: true,
+              style: { color: 'grey' }
             }}
           />
         )}
@@ -87,6 +88,8 @@ export default function Filter(props: FilterProps) {
             label="Select top level phenotype system"
             InputLabelProps={{
               shrink: true,
+              style: { color: 'grey' }
+
             }}
           />
         )}
